@@ -17,6 +17,9 @@ const storage = multer.memoryStorage();
 const upload = multer({ storage: storage });
 
 // Endpoint for uploading images
+app.get("/", (req, res) => {
+  res.json({ success: true, message: "APIs are working" });
+});
 app.post("/upload", (req, res) => {
   try {
     const imageData = req.body.imageData;
